@@ -1,4 +1,4 @@
-﻿namespace TrialApps
+﻿namespace TK.TrialApp.TrialApps
 {
     partial class Form1
     {
