@@ -37,6 +37,26 @@ namespace TK.TrialApp.DataSource
             }
         }
 
+        [Category("Tors div test")]
+        [Description("xxx")]
+        public void Linq999()
+        {
+            List<Customer> customers = GetCustomerList();
+            //var query = customers.Select(x=>x.CompanyName);
+            var query = customers.Select(x => new //Anonomus type
+            {
+                Name = x.CompanyName,
+                x.Country
+            });
+
+            foreach (var item in query)
+            {
+                // _log.Info(item);
+                _log.Info(item.Name + " : " + item.Country);
+            }
+        }
+
+
         [Category("Join Operators")]
         [Description("A group join produces a hierarchical sequence. The following query is an inner join " +
                     " that produces a sequence of objects, each of which has a key and an inner sequence of all matching elements.")]
