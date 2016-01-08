@@ -4,6 +4,7 @@ using TK.DesignPattern.DAL;
 using System.Collections.Generic;
 using DesignLibrary;
 using System.Linq;
+using System.IO;
 
 namespace TK.DesignLibrary.UnitTest
 {
@@ -42,7 +43,8 @@ namespace TK.DesignLibrary.UnitTest
             //Lister ut fil-informasjon
             //Egentlig laget til for mp3 filtype men kan benyttes for ulike typer.
             string searchText = "";
-            var mp3s = new MP3Locator(@"C:\Studie\mocking-with-moq");
+            var path = Directory.GetCurrentDirectory();
+            var mp3s = new MP3Locator(path);
             foreach (var mp3 in mp3s
                 .Where(m => m.Name.Contains(searchText) ||
                             m.Directory.Name.Contains(searchText) ||

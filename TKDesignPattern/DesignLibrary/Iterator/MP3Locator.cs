@@ -17,7 +17,7 @@ namespace DesignLibrary
         {
             //return new MP3Enumerator(_startingPath);
             var files = Directory.EnumerateFiles(_startingPath,
-                "*.sln", SearchOption.AllDirectories);
+                "*.mp3", SearchOption.AllDirectories);
             foreach (var file in files)
                 yield return new FileInfo(file);
         }
