@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DesignLibrary</RootNamespace>
     <AssemblyName>DesignLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,10 +31,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractFactory.cs" />
+    <Compile Include="ChainOfResponsibility\ChainOfResponsibility.cs" />
     <Compile Include="Composite.cs" />
+    <Compile Include="Decorator\Pizza.cs" />
+    <Compile Include="Decorator\PizzaWithCheese.cs" />
+    <Compile Include="Facade\FacadeBwPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facade\FacadeBwPanel.Designer.cs">
+      <DependentUpon>FacadeBwPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facade\FacadeForEach.cs" />
+    <Compile Include="Facade\SlowProcessor.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Iterator.cs" />
     <Compile Include="Iterator\FibonacciEnumerator.cs" />
@@ -54,6 +70,17 @@
     <Compile Include="Strategy.cs" />
     <Compile Include="Visitor\ObjectStructure.cs" />
     <Compile Include="Visitor\Visitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Facade\FacadeBwPanel.resx">
+      <DependentUpon>FacadeBwPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TK.DesignPattern.DAL\TK.DesignPattern.DAL.csproj">
+      <Project>{90b3d786-99b3-46c6-b449-269e230fc137}</Project>
+      <Name>TK.DesignPattern.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

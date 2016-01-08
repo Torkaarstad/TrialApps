@@ -209,5 +209,11 @@ namespace DesignPattern.GUI
         {
             txtInstanceCount.Text = Component1.InstanceCount.ToString();
         }
+
+        private void btnFacade_Click(object sender, EventArgs e)
+        {
+            Form frm = new FacadeBwPanel();
+            frm.ShowDialog();
+        }
     }
 }
