@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DependencyInjection", "TK.DependencyInjection\TK.DependencyInjection.csproj", "{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.Shared", "TK.Shared\TK.Shared.csproj", "{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{45BD10C6-E6D6-42BD-B4BA-898537B46EE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8E25B3AA-C53F-4E1D-8391-40EE9ADC943C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1} = {45BD10C6-E6D6-42BD-B4BA-898537B46EE6}
+	EndGlobalSection
+EndGlobal

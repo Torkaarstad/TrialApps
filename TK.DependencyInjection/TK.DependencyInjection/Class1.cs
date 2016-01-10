@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace DesignLibrary
+namespace TK.DependencyInjection
 {
-    public class Iterator
+    public class Class1
     {
-    
     }
 }
