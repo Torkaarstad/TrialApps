@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TK.DependencyInjection
+namespace TK.DI.PeopleViewerViewModel
 {
     public class Class1
     {

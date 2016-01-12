@@ -1,15 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DependencyInjection", "TK.DependencyInjection\TK.DependencyInjection.csproj", "{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.Shared", "TK.Shared\TK.Shared.csproj", "{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{45BD10C6-E6D6-42BD-B4BA-898537B46EE6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8E25B3AA-C53F-4E1D-8391-40EE9ADC943C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.Test", "TK.DI.Test\TK.DI.Test.csproj", "{801CFA48-A384-4A07-A004-A5CF7F10C0AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{828675AF-DB2A-4406-90F8-8FE8F297078E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.PersonRepository.Interface", "TK.DI.PersonRepository.Interface\TK.DI.PersonRepository.Interface.csproj", "{8AF0B0B0-1A5A-4FA0-81F5-34FE5406B91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.PersonRepository.Service", "TK.DI.PersonRepository.Service\TK.DI.PersonRepository.Service.csproj", "{2E820E55-DE92-45DA-849F-FE7B22B00681}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.PeopleService2", "TK.DI.PeopleService2\TK.DI.PeopleService2.csproj", "{645C49D1-1EBE-4B8E-B3D1-261CBD453855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9C65F4A2-E5C7-4380-82E1-045A78CAF2AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.PeopleView.Presentation", "TK.DI.PeopleView.Presentation\TK.DI.PeopleView.Presentation.csproj", "{536AF395-AEE1-4766-BC1C-785121D2810D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.PersonRepository.CSV", "TK.DI.PersonRepository.CSV\TK.DI.PersonRepository.CSV.csproj", "{D47F6F27-2A7D-4950-A503-ABC0569BA326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK.DI.PersonRepository.CachingDecorator", "TK.DI.PersonRepository.CachingDecorator\TK.DI.PersonRepository.CachingDecorator.csproj", "{C9E9C039-C80B-4AC4-97AF-72AA1270863A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,19 +33,49 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4B1DD1B-A4E5-4906-8DE1-2CB8E2C791C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{801CFA48-A384-4A07-A004-A5CF7F10C0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801CFA48-A384-4A07-A004-A5CF7F10C0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801CFA48-A384-4A07-A004-A5CF7F10C0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801CFA48-A384-4A07-A004-A5CF7F10C0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF0B0B0-1A5A-4FA0-81F5-34FE5406B91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF0B0B0-1A5A-4FA0-81F5-34FE5406B91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF0B0B0-1A5A-4FA0-81F5-34FE5406B91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF0B0B0-1A5A-4FA0-81F5-34FE5406B91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E820E55-DE92-45DA-849F-FE7B22B00681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E820E55-DE92-45DA-849F-FE7B22B00681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E820E55-DE92-45DA-849F-FE7B22B00681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E820E55-DE92-45DA-849F-FE7B22B00681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645C49D1-1EBE-4B8E-B3D1-261CBD453855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645C49D1-1EBE-4B8E-B3D1-261CBD453855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645C49D1-1EBE-4B8E-B3D1-261CBD453855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645C49D1-1EBE-4B8E-B3D1-261CBD453855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536AF395-AEE1-4766-BC1C-785121D2810D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536AF395-AEE1-4766-BC1C-785121D2810D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536AF395-AEE1-4766-BC1C-785121D2810D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536AF395-AEE1-4766-BC1C-785121D2810D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47F6F27-2A7D-4950-A503-ABC0569BA326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47F6F27-2A7D-4950-A503-ABC0569BA326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47F6F27-2A7D-4950-A503-ABC0569BA326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47F6F27-2A7D-4950-A503-ABC0569BA326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E9C039-C80B-4AC4-97AF-72AA1270863A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E9C039-C80B-4AC4-97AF-72AA1270863A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E9C039-C80B-4AC4-97AF-72AA1270863A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E9C039-C80B-4AC4-97AF-72AA1270863A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{99381579-1D5B-4DC3-B0EF-E3A4FA3482A1} = {45BD10C6-E6D6-42BD-B4BA-898537B46EE6}
+		{8AF0B0B0-1A5A-4FA0-81F5-34FE5406B91F} = {828675AF-DB2A-4406-90F8-8FE8F297078E}
+		{2E820E55-DE92-45DA-849F-FE7B22B00681} = {828675AF-DB2A-4406-90F8-8FE8F297078E}
+		{645C49D1-1EBE-4B8E-B3D1-261CBD453855} = {8E25B3AA-C53F-4E1D-8391-40EE9ADC943C}
+		{536AF395-AEE1-4766-BC1C-785121D2810D} = {9C65F4A2-E5C7-4380-82E1-045A78CAF2AE}
+		{D47F6F27-2A7D-4950-A503-ABC0569BA326} = {828675AF-DB2A-4406-90F8-8FE8F297078E}
+		{C9E9C039-C80B-4AC4-97AF-72AA1270863A} = {828675AF-DB2A-4406-90F8-8FE8F297078E}
 	EndGlobalSection
 EndGlobal
