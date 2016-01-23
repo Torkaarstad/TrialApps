@@ -52,6 +52,8 @@ namespace DesignLibrary
 
     public class Composite<T> : IComponent<T>
     {
+        //Dete er det spesielle for composite. Inneholder en mengde av Interfaced den implementerer.
+        //I dette tilfelle: IComponent<T>
         List<IComponent<T>> list;
 
         public Composite(T name)
