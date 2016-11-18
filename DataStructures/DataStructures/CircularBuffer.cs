@@ -1,11 +1,18 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace DataStructures
 {
     //T is like a place holder, E.g Double a new type appear and replace the T
+    public interface IBuffer<T>
+    {
+        void Write(T value);
+        T Read();
+        bool IsEmpty { get; }
+    }
 
-
-    public class CircularBuffer<T>
+    
+    public class CircularBuffer<T> : IBuffer<T>
     {
         private T[] _buffer;
         private int _start;
