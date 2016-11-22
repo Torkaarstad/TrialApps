@@ -1,66 +1,54 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace DataStructures
 {
     //T is like a place holder, E.g Double a new type appear and replace the T
-    public interface IBuffer<T>
-    {
-        void Write(T value);
-        T Read();
-        bool IsEmpty { get; }
-    }
 
-    
-    public class CircularBuffer<T> : IBuffer<T>
+    public class CircularBuffer<T> : Buffer<T>
     {
-        private T[] _buffer;
-        private int _start;
-        private int _end;
-
-        public CircularBuffer()
-            : this(capacity: 10)
+        int _capacity;
+        public CircularBuffer(int capacity = 10)
         {
-
+            _capacity = capacity;
         }
 
-        public CircularBuffer(int capacity)
+        public override void Write(T value)
         {
-            _buffer = new T[capacity + 1];
-            _start = 0;
-            _end = 0;
-        }
-
-        public void Write(T value)
-        {
-            _buffer[_end] = value;
-            _end = (_end + 1) % _buffer.Length;
-            if (_end == _start)
+            base.Write(value);
+            if (_queue.Count > _capacity)
             {
-                _start = (_start + 1) % _buffer.Length;
+                var discard = _queue.Dequeue();
+                OnItemDiscarded(discard, value);
             }
         }
 
-        public T Read()
+        private void OnItemDiscarded(T discard, T value)
         {
-            T result = _buffer[_start];
-            _start = (_start + 1) % _buffer.Length;
-            return result;
+            if (ItemDiscarded != null)
+            {
+                var args = new ItemDiscardedEventArgs<T>(discard, value);
+                ItemDiscarded(this, args);
+            }
         }
 
-        public int Capacity
+        //NOTE: Use of EventHandler!!!
+        public event EventHandler<ItemDiscardedEventArgs<T>> ItemDiscarded;
+
+        public bool IsFull { get { return _queue.Count == _capacity; } }
+
+    }
+
+    public class ItemDiscardedEventArgs<T> : EventArgs
+    {
+        public ItemDiscardedEventArgs(T discard, T newitem)
         {
-            get { return _buffer.Length; }
+            ItemDiscarded = discard;
+            NewItem = newitem;
         }
 
-        public bool IsEmpty
-        {
-            get { return _end == _start; }
-        }
-
-        public bool IsFull
-        {
-            get { return (_end + 1) % _buffer.Length == _start; }
-        }
+        public T ItemDiscarded { get; set; }
+        public T NewItem { get; set; }
     }
 }
